@@ -1,0 +1,1356 @@
+dl, dt, dd, ol, ul, li {margin: 0; padding: 0; border: 0; font-style:normal;}
+ol, ul, dl, li {list-style: none;}
+img{border:0 none; vertical-align:top;}
+a {outline: 0; text-decoration: none;}
+* {
+  text-decoration:none;
+  margin: 0 auto;
+  color: #202020;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  border: 0;
+  outline: 0;
+}
+body{
+  margin: 0 auto;
+  min-width: 1190px;
+}
+/*슬라이드*/
+
+/*메뉴바*/
+#topMenu {            
+  height: 30px; 
+  width: 1200px; 
+  text-align: center;
+}
+#topMenu ul li {                       
+  list-style: none;            
+  color: white;              
+  background-color: #11b341;  
+  float: left;                
+  line-height: 50px; 
+  vertical-align: middle;     
+  text-align: center;         
+}
+#topMenu .menuLink {                            
+  text-decoration:none;                   
+  color: white;                     
+  display: block;                
+  width: 200px;                  
+  font-size: 12px;                
+  font-weight: bold;            
+  font-family: "Trebuchet MS", Dotum, Arial;
+}
+#topMenu .menuLink:hover {           
+  color: black;                   
+  background-color: #11b341;    
+}
+/* header */
+header{
+  position: relative;
+  display:inline-block;
+  text-align: center;
+  padding: 2em;
+}
+header #login_check {
+  float: left; 
+  font-size: 11px;
+  position: absolute;
+  top: 12px;
+  right: 27px;
+} 
+header #h_login{
+  float: left;
+}
+#sa_bar {
+  float: left;
+  width: 1px;
+  height: 10px;
+  margin: 3px 7px;
+  background-color: #e4e8eb;
+}
+header #h_join{
+  float: left;
+}
+
+header #logo {
+  padding: 1em 0;
+  text-align: center;
+  margin: 0 auto;
+  display:inline-block;
+}
+header #logo img {
+  max-width: 0px;
+}
+
+/* navigation */
+nav { 
+  clear: both;
+	position: relative;
+	margin: 0 auto;
+	height: 62px;
+}
+nav .navbar {
+	position: absolute;
+	top: 0;
+	z-index: 9999;
+	width: 100%; 
+	font-size: 0.875em;
+	background-color: #fff;
+}
+nav .navbar > ul {
+	position: relative;
+	text-align: center;
+	height: 62px;
+	overflow: hidden;
+	transition: height 0.4s;
+	box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+nav .navbar > ul::after {
+	content: "";
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 60px;
+	width: 100%;
+	height: 1px;
+	background-color: #eaeaea;
+}
+nav .navbar > ul:hover {
+	height: 230px;
+}
+nav .navbar > ul:hover::after {
+	display: block;
+}
+nav .navbar > ul > li {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+}
+nav .navbar > ul > li > a {
+	display: block;
+	padding: 0 50px;
+	line-height: 60px;
+	text-align: center;
+	background-color: #fff;
+	font-weight: bold;
+	color: #5d5d5d;
+	transition: background-color 0.3s;
+}
+nav .navbar > ul > li > .active{
+	color: #2019AE;
+	font-weight: bolder;
+}
+nav .navbar .sub a {
+	display: block;
+	line-height: 40px;
+	background-color: #fff;
+	color: #909090;
+}
+
+/* main */
+.main{
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  width: 1200px;
+  padding: 30px 30px;
+}
+.controlMain{
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  width: 1150px;
+  padding: 100px 30px;
+}
+  .controlMain .cal{
+    float: left;
+    width: 45%;
+  }
+  .controlMain .cal .calender{
+    width: 100%;
+    background-color: #979797;
+  }
+    .controlMain .cal .calender .top td{
+      height: 50px;
+      text-align: center;
+      background-color: white;
+    }
+    .controlMain .cal .calender .week_line td{
+      font-size: 14px;
+      width: 100px;
+      height: 25px;
+      text-align: center;
+      background-color: white;
+      height: 20;
+      text-align: center;
+      background-color:#DDDDDD;
+    }
+      .controlMain .cal .calender #sun{
+        color: #E23F3F;
+      }
+      .controlMain .cal .calender #sat{
+        color: #2019AE;
+      }
+    .controlMain .cal .calender .calprint{
+      width: 100;
+      height: 80px;
+      text-align: left;
+      background-color: white;
+      font-size: 12px;
+    }
+    .controlMain .cal .calender .calprint .schedule{
+      margin-top: 8px;
+      margin-left: 2px;
+    }
+  .controlMain .right{
+    float: left;
+    margin-left: 15px;
+    width: 50%;
+    padding: 15px 0;
+    text-align: center;
+  }
+    .controlMain .right .todayInput{
+      padding: 20px;
+      margin: 20px 0 0 25px;
+      border-top: 1px solid #d0d0d0;
+    }
+    .controlMain .right .todayInput h3{
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .controlMain .right .todayInput .inputData{
+      font-size: 12px;
+      line-height: 17px;
+      text-align: left;
+    }
+    .controlMain .right .todayInput .inputData #date{
+      margin-bottom: 15px;
+    }
+    .controlMain .right .todayInput .inputData #height{
+      border-bottom: 1px solid #ccc;
+      width: 60px;
+    }
+    .controlMain .right .todayInput .inputData #weight{
+      border-bottom: 1px solid #ccc;
+      width: 60px;
+      margin-left: 30px;
+    }
+    .controlMain .right .todayInput input[value='확인']{
+      background-color: #11b341;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+      padding: 4px;
+      width: 50px;
+    }
+
+/* left_side */
+.left_side{
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 320px;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0 32px;
+}
+
+  /* left_side - 로그인, 회원정보 */
+  .left_side > .info {
+    height: 120px;
+    background-color: #f7f9fa;
+    padding: 12px 20px;
+    border: solid 1px #e9ebec;
+    border-radius: 2px;
+    color: #5d5d5d;
+  }
+    .left_side > .info > #top{
+      text-align: center;
+      margin: 0 5px;
+    }
+    .left_side > .info > #info_area{
+      overflow: hidden;
+      margin: 5px 0 20px;
+    }
+    .left_side > .info > #info_area > #profile_img{
+      width: 65px;
+      height: 65px;
+      border-radius: 70%;
+      object-fit: cover;
+      position: relative;
+      float: left;
+      margin: 0;
+    }
+    .left_side > .info > #info_area > #user_info{
+      float: left;
+      margin: 10px 0 0 15px;
+    }
+      .left_side > .info > #info_area > #user_info > #nickname{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .left_side > .info > #info_area > #user_info > #body_info{
+        overflow: hidden;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .left_side > .info > #info_area > #user_info > #body_info a{
+        float: left;
+        margin: 2px;
+        line-height: 16px;
+      }
+      .left_side > .info > #info_area > #user_info > #body_info i{
+        margin: 3px 10px 0 10px;
+        height: 14px;
+        line-height: 16px;
+      }
+    .left_side > .info > #login_btn button{
+      width: 100%;
+      height: 45px;
+      margin: 15px 0;
+      border-radius: 5px;
+      background-color: #0F4C81;
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .left_side > .info > #bottom {
+      overflow: hidden;
+      padding-top: 10px;
+      border-top: solid 1px #e9ebec;
+    }
+      .left_side > .info > #bottom > #b_left{
+        float: left;
+        margin-left: 0;
+      }
+      .left_side > .info > #bottom > #b_right{
+        float: right;
+        margin-right: 0;
+      }
+  
+  /* left_side - 보조제 */
+  .left_side > .adjSummary{
+    margin-top: 25px;
+    height: 400px;
+    padding: 14px 17px;
+    font-size: 13px;
+    border: 1px solid #e4e8eb;
+  }
+    .left_side .adjSummary #top{
+      padding-bottom: 5px;
+      border-bottom: 1px solid #e4e8eb;
+      overflow: hidden;
+      color: #5d5d5d;
+    }
+      .left_side > .adjSummary #adjlink{
+        float: left;
+        margin-left: 2px;
+        font-weight: bold;
+        line-height: 27px;
+      }
+      .left_side > .adjSummary .page{
+        float: right;
+        margin-right: 2px;
+      }
+      .left_side > .adjSummary .page .page_num{
+        float: left;
+        padding-right: 10px;
+        font-size: 11px;
+        line-height: 27px;
+      }
+      .left_side > .adjSummary .page .page_num #now_page{
+        font-weight: 700;
+      }
+      .left_side > .adjSummary .page .page_btn{
+        float: right;
+        margin-right: 0;
+      }
+      .left_side > .adjSummary .page .page_btn #btnr{
+        margin-left: -5px;
+      }
+      .left_side > .adjSummary .page .page_btn button{
+        padding: 4px 8px 5px 6px;
+        font-weight: bold;
+        background-color: #fff;
+        border: 1px solid #dae1e6;
+      }
+      .left_side > .adjSummary .page .page_btn button:hover{
+        background-color: #fafbfc;
+      }
+    .left_side .adjSummary .adjview{
+      overflow: hidden;
+      padding: 0 10px;
+    }
+    .left_side .adjSummary .adjview .list{
+      width: 100%;
+    }
+    .left_side .adjSummary .adjview #adj_item{
+      float: left;
+      width: 42%;
+      margin-top: 10px;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .left_side .adjSummary .adjview #adj_item #thumb_box {
+      overflow: hidden;
+      position: relative;
+    }
+    .left_side .adjSummary .adjview #adj_item:hover img{
+      -webkit-transform:scale(1.1);
+      transform:scale(1.1);
+      transition: transform .3s;
+    }
+    .left_side .adjSummary .adjview #adj_item:hover #title_box{
+      text-decoration: underline;
+    }
+    .left_side .adjSummary .adjview #adj_item img{
+      width: 100%;
+      height: 100%;
+      -webkit-transform:scale(1.0);
+      transform: scale(1.0);
+      transition: transform .3s; 
+    }
+    .left_side .adjSummary .adjview #title_box {
+      margin-top: 5px;
+    }
+    .left_side .adjSummary .adjview #title_box span{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      line-height: 16px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .left_side .adjSummary .adjview #title_box #brand {
+      font-weight: 700;
+      color: #0F4C81;
+    }
+
+/* left_menu(서브메뉴가 있는 화면들) */
+.left_menu{
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 180px;
+  height: 300px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 40px 25px;
+  margin: 10px 30px 0 50px;
+  text-align: left;
+}
+  .left_menu .main_menu{
+    display: block;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 0 2px 16px;
+    border-bottom: 1.8px solid #202020;
+  }
+  .left_menu .sub_menu{
+    display: block;
+    padding: 12px 5px;
+    font-size: 13px;
+  }
+  .left_menu .sub_menu li{
+    line-height: 34px;
+  }
+  .left_menu .sub_menu li a:hover {
+    text-decoration: underline;
+}
+  .left_menu .sub_menu .current a{
+    color: #2019AE;
+	  font-weight: bolder;
+  }
+  
+
+/* right_side */
+.right_side{
+  position: relative;
+  overflow: hidden;
+  float: right;
+  width: 750px;
+  margin: 0 32px;
+}
+.right_side #top{
+  padding-bottom: 8px;
+  border-bottom: 1px solid #666;
+  overflow: hidden;
+}
+.right_side #top #link1{
+  float: left;
+  margin-left: 0;
+  font-weight: bold;
+}
+.right_side #top #link2{
+  float: right;
+  margin-right: 0;
+}
+
+/* 커뮤니티 요약 */
+.right_side .board{
+  padding-bottom: 20px;
+  border-bottom: 1.2px solid #666;
+}
+  .right_side .board table{
+    width: 100%;
+  }
+  .right_side .board .bsl{
+    padding-right: 20px;
+    width: 50%;
+  }
+  .right_side .board .bsr{
+    padding-left: 20px;
+    width: 50%;
+  }
+  .right_side .board_summary{
+    padding: 15px 0;
+  }
+    .right_side .board_summary #top #link1{
+      font-size: 14px;
+    }
+    .right_side .board_summary #top #link2{
+      font-size: 11px;
+    }
+  .right_side .board_summary .board_box{
+    border-collapse: collapse;
+  }
+  .right_side .board_summary .board_box tr{
+    height: 28px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 13px;
+  }
+  .right_side .board_summary .board_box #dot{
+    padding: 0 7px;
+    width: 5%;
+    font-weight: bolder;
+  }
+  .right_side .board_summary .board_box #title{
+    width: 90%;
+  }
+  .right_side .board_summary .board_box #hits{
+    padding-right: 10px;
+    width: 5%;
+    text-align: center;
+  }
+  .right_side .board_summary .board_box span{
+    padding-left: 7px;
+    color: #E23F3F;
+    font-weight: 600;
+  }
+
+/* 홈트레이닝 요약 */
+.right_side .htSummary{
+  padding-top: 12px;
+}
+  .right_side .htSummary #top{
+    border-bottom: none;
+    padding-bottom: 20px;
+  }
+  .right_side .htSummary #top #link1{
+    font-size: 17px;
+  }
+  .right_side .htSummary #top #link2{
+    font-size: 13px;
+  }
+  .right_side .htSummary .ht_list table{
+    width: 100%;
+    padding-left: 0 12px;
+  }
+  .right_side .htSummary .ht_list td{
+    width: 25%;
+    padding-right: 12px;
+  }
+  .right_side .htSummary .ht_list #td_t{
+    padding-left: 5px;
+    font-size: 13px;
+  }
+
+/* right_content */
+.right_content{
+  overflow: hidden;
+  margin: 20px 35px;
+  width: 800px;
+  position: relative;
+  float: left;
+  font-size: 12px;
+}
+  /* 칼로리 리스트, 게시판, 보조제 리스트 */
+  .right_content .kcal_list, .right_content .board, .adj_content .adjlist{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+    .right_content .kcal_list #top th, .right_content .board #top th, .adj_content .adjlist #top th{
+      line-height: 40px;
+      border-top: 1.5px solid #737373;
+      border-bottom: 1.2px solid #d0d0d0;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .right_content .kcal_list td, .right_content .board td{
+      line-height: 40px;
+      border-bottom: 1px solid #efefef;
+    }
+    .right_content .kcal_list #name{
+      width: 65%;
+    }
+    .right_content .kcal_list #kcal, .right_content .kcal_list #size{
+      width: 17%;
+    }
+    .right_content .kcal_list tbody #name{
+      padding-left: 15px;
+      text-align: left;
+    }
+    .right_content .board #Wtitle{
+      width: 60%;
+    }
+    .right_content .board #Wcategory, .right_content .kcal_list #Wnum,
+    .right_content .kcal_list #Wdate, .right_content .kcal_list #Wnick{
+      width: 10%;
+    }
+    .right_content .board tbody #Wtitle{
+      padding-left: 15px;
+      text-align: left;
+    }
+    .right_content .board tbody #Wtitle a:hover{
+      text-decoration: underline;
+    }
+    .right_content .board #Wnick{
+      text-align: left;
+    }
+    .right_content .board #Wtitle span{
+      color: #E23F3F;
+      font-weight: 600;
+    }
+    .right_content #newW img{
+      margin-left: 1px;
+      width: 12px;
+      height: 12px;
+      vertical-align: -2.5px;
+    }
+  .right_content #write_btn button{
+    cursor: pointer;
+    float: right;
+    background-color: #0F4C81;
+    color: white;
+    width: 8%;
+    height: 35px;
+    padding: 2px 5px;
+    margin: 15px;
+    font-size: 12px;
+  }
+  .right_content .bottom, .adj_content .bottom{
+    overflow: hidden;
+    width: 100%;
+    margin-top: 25px;
+  }
+    .right_content .bottom .page_num, .adj_content .bottom .page_num{
+      text-align: center;
+    }
+      .right_content .bottom .page_num a, .adj_content .bottom .page_num a{
+        color: black;
+        display: inline-block;
+        width: 34px;
+        line-height: 34px;
+        transition: background-color .3s;
+        font-size: 11px;
+        vertical-align: middle;
+      }
+      .right_content .bottom .page_num #re_ct, .adj_content .bottom .page_num #re_ct{
+        background-color: #0F4C81;
+        color: white;
+      }
+      .right_content .bottom .page_num a:hover:not(#re_ct), .adj_content .bottom .page_num a:hover:not(#re_ct){
+        background-color: #ddd;
+      }
+    .right_content .bottom .search_box{
+      text-align: center;
+      margin-top: 25px;
+      font-size: 13px;
+    }
+      .right_content .bottom .search_box select{
+        border: solid 1px #dddddd;
+        width: 10%;
+        height: 25px;
+        padding: 5px 10px;
+        box-sizing: inherit;
+      }
+      .right_content .bottom .search_box input{
+        border: solid 1px #dddddd;
+        width: 50%;
+        height: 25px;
+        padding: 5px 10px;
+        box-sizing: inherit;
+      }
+      .right_content .bottom .search_box button{
+        cursor: pointer;
+        background-color: #0F4C81;
+        color: white;
+        width: 5%;
+        height: 27px;
+        padding: 5px 10px;
+        box-sizing: inherit;
+      }
+
+.right_content .board_write{
+  width: 100%;
+}
+  .right_content .board_write h1{
+    text-align: right;
+    padding: 0 10px 10px;
+    border-bottom: 2px solid #d0d0d0;
+  }
+    .right_content .board_write .write_area{
+      padding: 10px 0;
+      width: 100%;
+    }
+      .right_content .board_write .write_area #in_category{
+        margin-bottom: 10px;
+      }
+        .right_content .board_write .write_area #in_category select{
+          text-align: left;
+          width: 40%;
+          height: 40px;
+          line-height: 40px;
+          border: solid 1px #d0d0d0;
+          padding: 2px 10px;
+        }
+      .right_content .board_write .write_area #in_title{
+        line-height: 40px;
+        margin-bottom: 10px;
+        border: solid 1px #d0d0d0;
+        overflow: hidden;
+      }
+        .right_content .board_write .write_area #in_title input{
+          text-align: left;
+          padding: 0 10px;
+          line-height: 40px;
+          width: 100%;
+        }
+      .right_content .board_write .write_area #in_file{
+        line-height: 40px;
+        background-color: #f7f9fa;
+        padding: 0 15px;
+        border: solid 1px #d0d0d0;
+        border-bottom: none;
+      }
+        .right_content .board_write .write_area #in_file input{
+          line-height: 40px;
+          text-align: left;
+          height: 40px;
+        }
+      .right_content .board_write .write_area #in_content{
+        height: 375px;
+        margin-bottom: 10px;
+        border: solid 1px #d0d0d0;
+        overflow: hidden;
+      }
+        .right_content .board_write .write_area #in_content input, .right_content .board_write .write_area #in_content textarea{
+          width: 100%;
+          height: 100%;
+          padding: 15px;
+          resize: none;
+        }
+      .right_content .board_write .write_area #write_btn{
+        line-height: 40px;
+        margin-top: 10px;
+        overflow: hidden;
+        text-align: right;
+      }
+        .right_content .board_write .write_area #write_btn button{
+          height: 40px;
+          margin: 15px 0;
+          background-color: #11b341;
+          font-size: 14px;
+          font-weight: 500;
+          color: white;
+          cursor: pointer;
+        }
+
+.right_content .article_top{
+  overflow: hidden;
+  padding-right: 5px;
+}
+.right_content .article_top a:hover{
+  text-decoration: underline;
+}
+  .right_content .article_top a{
+    float: right;
+    font-size: 13px;
+  }
+.right_content .board_read{
+  overflow: hidden;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+}
+  .right_content .board_read .article_header{
+    padding: 5px 5px 15px 5px;
+    border-bottom: 1px solid #d0d0d0;
+  }
+    .right_content .board_read .article_header #article_category{
+      color: #0F4C81;
+      font-weight: 500;
+    }
+    .right_content .board_read .article_header #title_area{
+      margin-bottom: 10px;
+      line-height: 28px;
+    }
+      .right_content .board_read .article_header #title_area h1{
+        font-size: 28px;
+        font-weight: 600;
+        padding: 15px 0 5px;
+      }
+    .right_content .board_read .article_header .writerInfo #profile_info{
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+    .right_content .board_read .article_header .writerInfo .article_info span{
+      color: #979797;
+      line-height: 13px;
+    }
+      .right_content .board_read .article_header .writerInfo .article_info #date{
+        margin-right: 5px;
+      }
+  .right_content .board_read .article_container{
+    padding: 15px 5px 5px;
+  }
+    .right_content .board_read .article_container .attach_file{
+      line-height: 15px;
+      text-align: right;
+      padding-bottom: 10px;
+    }
+      .right_content .board_read .article_container .attach_file .material-icons, .right_content .board_read .article_container .attach_file a{
+        font-size: 13px;
+      }
+    .right_content .board_read .article_container .article_viewer{
+      display: block;
+      font-size: 15px;
+      padding: 15px 0px 40px;
+    }
+    .right_content .board_read .article_container .comment_viewer{
+      margin: 10px 0 26px;
+      padding-top: 15px; 
+      border-top: 1px solid #d0d0d0;
+    }
+    .right_content .board_read .article_container .comment_viewer .comment_area{
+      margin: 10px 0;
+      padding: 15px 5px 25px; 
+      border-bottom: 1px solid #d0d0d0;
+    }
+      .right_content .board_read .article_container .comment_viewer .comment_area #comment_nick{
+        font-weight: bold;
+      }
+      .right_content .board_read .article_container .comment_viewer .comment_area #comment_text{
+        padding: 4px 0 7px;
+        font-size: 13px;
+      }
+      .right_content .board_read .article_container .comment_viewer .comment_area #comment_date{
+        font-size: 11px;
+        color: #979797;
+      }
+      .right_content .board_read .article_container .comment_viewer .comment_area .comment_del{
+        margin-top: -11px;
+        padding-right: 10px;
+      }
+      .right_content .board_read .article_container .comment_viewer .comment_area .comment_del a{
+        color: #737373;
+        float: right;
+      }
+    .right_content .board_read .article_container .comment_write {
+      margin: 10px 0 20px;
+      padding: 16px 10px 10px 18px;
+      border: 2px solid #d0d0d0;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+      .right_content .board_read .article_container .comment_write textarea{
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: block;
+        width: 100%;
+        min-height: 17px;
+        max-height: 200px;
+        padding-right: 1px;
+        border: 0;
+        font-size: 12px;
+        -webkit-appearance: none;
+        resize: none;
+        box-sizing: border-box;
+        outline: 0;
+      }
+      .right_content .board_read .article_container .comment_write #btn{
+        overflow: hidden;
+      }
+      .right_content .board_read .article_container .comment_write button{
+        background: none;
+        float: right;
+        text-align: bold;
+        color: #737373;
+        margin-right: 5px;
+      }
+.right_content .article_bottom{
+  overflow: hidden;
+  padding-left: 5px;
+  float: right;
+}
+  .right_content .article_bottom a:hover{
+    text-decoration: underline;
+  }
+  .right_content .article_bottom span{
+    font-size: 13px;
+    float: right;
+  }
+  .right_content .article_bottom .article_re{
+    float: left;
+  }
+    .right_content .article_bottom .article_re span{
+      margin-right: 20px;
+    }
+
+/* 섭취칼로리 */
+
+/* 보조제 */
+.adj_content{
+  overflow: hidden;
+  width: 95%;
+  margin: 20px 25px;
+  position: relative;
+  font-size: 12px;
+}
+  .adj_content .adjlist #photo{
+    width: 20%;
+  }
+    .adj_content .adjlist #photo img{
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+  .adj_content .adjlist #name{
+    width: 15%;
+  }
+    .adj_content .adjlist tbody #name{
+      font-weight: 500;
+      font-size: 13px;
+    }
+  .adj_content .adjlist #ingredient{
+    width: 35%;
+  }
+    .adj_content .adjlist tbody #ingredient{
+      font-size: 11px;
+      padding: 0 10px;
+    }
+    
+  .adj_content .adjlist #brand, .adj_content .adjlist #review{
+    width: 10%;
+  }
+    .adj_content .adjlist tbody #brand{
+      font-size: 13px;
+    }
+    .adj_content .adjlist tbody #review, .adj_content .adjlist tbody #brand span {
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .adj_content .adjlist tbody #review:hover, .adj_content .adjlist tbody #brand span:hover{
+      text-decoration: underline;
+    }
+  .adj_content .adjlist td{
+    padding: 20px 0;
+    border-bottom: 1px solid #efefef;
+  }
+  .adj_content #list_back{
+    overflow: hidden;
+    width: 100%;
+  }
+    .adj_content #list_back button{
+      cursor: pointer;
+      float: right;
+      background-color: white;
+      width: 8%;
+      height: 35px;
+      padding: 2px 5px;
+      font-size: 12px;
+    }
+  
+  .adj_content .adj_board{
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 30px 15px;
+    border: 10px solid #d0d0d0;
+  }
+  .adj_content .adj_board .adj_info{
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    padding: 0 10px 30px;
+    border-bottom: 1px solid #d0d0d0;
+  }
+    .adj_content .adj_board .adj_info #left_side{
+      width: 30%;
+    }
+      .adj_content .adj_board .adj_info #left_side img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    .adj_content .adj_board .adj_info #right_side{
+      width: 50%;
+      text-align: left;
+    }
+      .adj_content .adj_board .adj_info #right_side #name{
+        font-size: 24px;
+        font-weight: bold; 
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d0d0d0;
+      }
+      .adj_content .adj_board .adj_info #right_side #ingredient{
+        padding: 20px 0;
+      }
+    .adj_content .adj_board .adj_info #right_side button{
+      cursor: pointer;
+      float: right;
+      background-color: #11b341;
+      width: 20%;
+      height: 35px;
+      padding: 2px 5px;
+      margin-top: -50px;
+      font-size: 12px;
+    }
+    .adj_content .adj_board .adj_info #right_side button a{
+      color: white;    
+    }
+  .adj_content .adj_board .review_comment{
+    width: 95%;
+    padding: 20px 15px;
+  }
+  .adj_content .adj_board .review_comment h3{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+    .adj_content .adj_board .review_comment .reivew_write textarea{
+      padding: 0.75em 1em;
+      font-size: 1em;
+      border-radius: 5px;
+      border: solid 1px #dddddd;
+      background: #fff;
+      width: 60%;
+      height: 60px;
+      display: inline-block;
+      resize: none;
+      vertical-align: middle;
+      box-sizing: initial;
+    }
+    .adj_content .adj_board .review_comment .reivew_write .stars{
+      display: inline-block;
+      height: 70px;
+      line-height: 35px;
+      text-align: center;
+      width: 15%;
+      box-sizing: initial;    
+      vertical-align: middle;
+      padding: 10px;
+      margin: 0 15px;
+    }
+    .adj_content .adj_board .review_comment .review_list{
+      margin: 10px;
+      padding: 25px 20px 12px; 
+    }
+    .adj_content .adj_board .review_comment .review_list #rivew_text{
+      font-size: 14px;
+    }
+    .adj_content .adj_board .review_comment .review_list #review_date{
+      padding-top: 10px;
+      font-size: 11px;
+    }
+    .adj_content .adj_board .review_comment .review_list .stars {
+      float: right;
+      margin: -30px 40px 0 0;
+    }
+    .adj_content .adj_board .review_comment .review_list .stars .rateyo{
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .adj_content .adj_board .review_comment .review_list .stars .result{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      width: 30px;
+      vertical-align: bottom;
+    }
+    .adj_content .adj_board .review_comment .reivew_write .stars .result{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 15px;
+    }
+    .adj_content .adj_board .review_comment .reivew_write button{
+      display: inline-block;
+      cursor: pointer;
+      background-color: #11b341;
+      color: white;
+      width: 10%;
+      height: 70px;
+      padding: 2px 5px;
+      font-size: 13px;
+      border-radius: 5px;
+      box-sizing: initial;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+
+
+.login_form{
+  position: relative;
+  overflow: hidden;
+  width: 500px;
+  padding: 80px 0 100px;
+  text-align: center;
+}
+  .login_form #top{
+    margin-bottom: 30px;
+  }
+  .login_form #top h1{
+    font-size: 45px;
+    font-weight: 600;
+  }
+  .login_form #top h5{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  .login_form #middle, .join_form #middle{
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+    .login_form #middle .input_form{
+      float: left;
+      width: 55%;
+      margin: 0 10px 0 15%;
+      display: inline;
+    }
+      .login_form #middle .input_form input{
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        line-height: 40px;
+      }
+    .login_form #middle .loginbtn{
+      float: left;
+      overflow: hidden;
+      width: 20%;
+    }
+      .login_form #middle .loginbtn input{
+        width: 100%;
+        height: 86px;
+        background-color: #11b341;
+        color: white;
+      }
+  .login_form .checkBox{
+    display: inline-block;
+    margin-top: 13px;
+    margin-left: -130px;
+    font-size: 13px;
+  }
+    .login_form .checkBox input{
+      margin-right: 5px;
+    }
+    .login_form .checkBox span{
+      margin-right: 30px;
+    }
+  .login_form #bottom{
+    margin-top: 20px;
+    font-size: 13px;
+  }
+    .login_form #bottom .join_find #regist{
+      margin-right: 20px;
+    }
+    .login_form #bottom .join_find a:hover{
+      text-decoration: underline;
+    }
+.join_form{
+  position: relative;
+  overflow: hidden;
+  width: 680px;
+  padding: 10px 0 100px;
+  text-align: center;
+}
+  .join_form #top{
+    padding-bottom: 30px;
+    border-bottom: 2px solid #0F4C81;
+  }
+  .join_form #middle-top{
+    padding: 50px 0 30px;
+    line-height: 20px;
+  }
+  .join_form #middle-top h3{
+    float: left;
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+  }
+  .join_form #middle-top #essential{
+    float: left;
+    padding-left: 15px;
+    font-size: 12px;
+    color: #5d5d5d;
+    font-weight: bolder;
+  }
+  .join_form #p-red{
+    color: #E23F3F;
+  }
+  .join_form #middle table{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+  }
+    .join_form #middle th, .join_form #middle td{
+      line-height: 80px;
+    }
+    .join_form #middle tr{
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .join_form #middle th{
+      width: 120px;
+      font-size: 13px;
+      text-align: right;
+      padding-right: 15px;
+      background-color: #f5f5f5;
+    }
+    .join_form #middle td{
+      font-size: 12px;
+      text-align: left;
+      width: 510px;
+      padding-left: 15px;
+    }
+    .join_form #middle td input{
+      margin-left: 0px;
+      width: 190px;
+      line-height: 28px;
+      border: 1px solid #ccc;
+    }
+    .join_form #middle td span{
+      font-size: 10px;
+      padding-left: 10px;
+      line-height: 13px;
+    }
+    .join_form #middle td #sex1, .join_form #middle td #sex2, .join_form #middle td #sex3{
+      display: inline;
+      height: 12px;
+      width: 5%;
+      padding-right: 15px;
+    }
+  .join_form #bottom .joinbtn input{
+    cursor: pointer;
+    width: 20%;
+    height: 45px;
+    padding: 2px 5px;
+    margin: 15px;
+    font-size: 13px;
+    font-weight: bolder;
+    border-radius: 5px;
+  }
+  .join_form #bottom .joinbtn #singupbtn{
+    background-color: #0F4C81;
+    color: white;
+  }
+
+.findForm{
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  padding: 10px 0 100px;
+}
+  .findForm .findIDform, .findForm .findPWform{
+    padding: 10px;
+    height: 250px;
+  }
+  .findForm .findPWform{
+    margin-top: 50px;
+  }
+  .findForm h3{
+    padding: 10px;
+    border-bottom: 1px solid #0F4C81;
+  }
+  .findForm table{
+    padding: 20px 0;
+    width: 100%;
+    float: left;
+    border-collapse: collapse;
+  }
+  .findForm tr{
+    line-height: 60px;
+  }
+  .findForm th{
+    width: 18%;
+    font-size: 13px;
+    text-align: right;
+    padding-right: 12px;
+    background-color: #f5f5f5;
+  }
+  .findForm td{
+    font-size: 12px;
+    text-align: left;
+    width: 70%;
+    padding-left: 15px;
+  }
+    .findForm td input{
+      margin-left: 0px;
+      width: 50%;
+      line-height: 28px;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+  .findForm input[type=button]{
+    float: right;
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    padding: 2px 5px;
+    margin: 15px;
+    font-size: 13px;
+    font-weight: bolder;
+    background-color: #0F4C81;
+    color: white;
+  }
+/* footer */
+footer{
+  clear: both;
+  text-align: center;
+  width: 1150px;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 0.5px solid #666;
+}
+footer p{
+  font-size: 10px;
+}
+
+/* 상단 이동 스크롤 버튼 */
+.arrow_upward {
+	display: inline;
+	position: fixed;
+  right: 24px;
+  bottom: 20px;
+	padding: 10px;
+  border-radius: 100%;
+  z-index: 100;
+  box-shadow: 2px 2px 4px #adadad;
+  background-color: white;
+}
+.arrow_upward i {
+  font-size: 28px;
+}
+.arrow_upward:hover{
+  background-color: #11b341;
+  cursor: pointer;
+}
+.arrow_upward:hover > i{
+  color:#fff;
+}
