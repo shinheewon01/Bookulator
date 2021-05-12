@@ -1,0 +1,240 @@
+<?php
+    session_start();
+    header('Content-Type: text/html; charset=utf-8;');
+    $mysql_host = 'localhost';
+    $mysql_user = 'deu20191160';
+    $mysql_password = '20191160';
+    $mysql_db = 'deu20191160';
+
+    $conn = mysqli_connect($mysql_host, $mysql_user, $mysql_password);
+    $db = mysqli_select_db($conn, $mysql_db);
+    
+?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/deu20191160/team/maintest.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+		integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+    <!--배너를 위한-->
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+            
+            
+            
+        /* banner */
+        .contents {width: 1000px; height: 400px; background-color: #11b341; margin: 0 auto;}
+
+        .banner {position: relative; width: 1000px; height: 400px;   margin:0 auto; padding:0; overflow: hidden;}
+        .banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 1000px; height: 400px; margin:0; padding:0;}
+    
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* 상단 이동 스크롤 버튼 */
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.arrow_upward').fadeIn();
+                } else {
+                    $('.arrow_upward').fadeOut();
+                }
+            });
+            $('.arrow_upward').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 400);
+                return false;
+            });
+        });
+    </script>
+    
+    <title id="header">COM_REVIEW</title>
+</head>
+
+<body>
+    <header style="text-align: center; width: 60%; margin:0em 18em; ">
+        <div  style="display: inline-block; text-align: center;">
+        <a href="http://1.253.254.107/deu20191160/team/main.html"><img src="http://1.253.254.107/deu20191160/team/image/bookulator.png" width= "180" height="180" ></a>
+        <a href="http://1.253.254.107/deu20191160/team/main.html"><img src="http://1.253.254.107/deu20191160/team/image/logo.png" width= "600" height="180"></a>
+        </div>
+        
+        <div id="search" style="height: 60px; width: 100%; border:14px solid #11b341; background: #ffffff;  display: inline-block; text-align: center;  " >
+            
+            <input type ="text" placeholder="검색어 검색" style="font-size: 8px; width: 90%; padding: 10px; outline: none; float: left; ">
+            <button style="width: 80px; height: 45px; ; background: #11b341; outline: none; float: right; margin:-2px -1px; color: #ffffff">검색</button>
+        </div>
+    </header>
+    
+
+    <nav id="topMenu" >
+        <ul>
+            <li><a class="menuLink" href="/deu20191160/team/main.html">홈</a></li>              
+            <li><a class="menuLink" href="/deu20191160/team/IPE/IPE.html">정보처리기사</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/MOS/MOS.html">MOS</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/COM/COM.html">컴퓨터활용능력</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/WD/WD.html">웹디자인</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/ERP/ERP.html">ERP</a></li>
+        </ul>
+        <br>
+</nav>
+<div class="main">
+    <div>
+        <img src="http://1.253.254.107/deu20191160/team/image/COM.png" width="250"height="100" style="padding: 0em 2em;">
+        <button style="background-color: #11b341; float: right;">
+            <a href="/deu20191160/team/COM/COM.html " style="color: white;">목록으로</a>
+        </button>
+    </div>
+    <div class="adj_content">
+        
+        <div class="adj_board" style="border: 10px solid #11b341;">
+            <?php
+        $bno = $_GET['C_num'];
+        $sql = "select * from COM where C_num ='$bno' ";
+        $q = mysqli_query($conn,$sql);
+        while($row = mysqli_fetch_array($q)){
+        ?>
+        <div class="adj_info">
+            <div id="left_side">
+                <?php echo "<img src=" . $row['C_photo'] . ">";  ?>
+            </div>
+
+            <div id="right_side">
+                <p id="name"><?php echo $row['C_name'];?></p>
+                <p id="author" style="display: inline-block;"><?php echo $row['C_author']; ?></p>
+                <p style="display: inline-block;"> / </p>
+                <p id="pub" style="display: inline-block;"><?php echo $row['C_pub'];?></p>
+                <p id="pub" style="font-size: 15px;"><strong><?php echo $row['C_imf'];?></strong></p>
+                <br>
+                <button style="background-color: #11b341;">
+                 <?php echo "<a href=" . $row['C_store']. ">";
+                  echo 이동하기;
+                  echo "</a>";
+                 ?>
+                </button>
+            </div>
+        </div>
+        <?php
+             }
+        ?>
+        <div class="review_comment" style="float: center;">
+            <h3>리뷰</h3>
+            <?php
+            $bno = $_GET['C_num'];
+            $sql = "select * from COM where C_num ='$bno' ";
+            $q = mysqli_query($conn,$sql);
+            while($row = mysqli_fetch_array($q)){
+            ?>
+            <!--- 리뷰 입력 폼 -->
+            <div class="dap_ins" >
+                <form action="/deu20191160/team/COM/COM_review_ok.php?C_num=<?php echo $bno; ?>" method="post" >
+                    <div class="reivew_write" style="margin: 0 auto;" >
+                        <!--리뷰입력-->
+                        <textarea name="R_content" class="R_content" id="R_content" style="display: inline-block;"></textarea>
+                        <!--별점 달기-->
+                        <div class="rateyo" id="rating" data-rateyo-rating="0"
+                        data-rateyo-num-stars="5" data-rateyo-score="3" style="display: inline-block;">
+						</div>
+
+						<span class='result'></span>
+						<input type="hidden" name="rating" >
+
+							<script
+								src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+							<script
+								src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+							<script>
+
+
+								$(function () {
+									$(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+									var rating = data.rating;
+									$(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
+									$(this).parent().find('.result').text('rating :' + rating);
+									$(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+										});
+								});
+
+							</script>
+                        <button style="width: 80px; height: 50px; background-color: #11b341;" type="submit" value = "입력" >입력</button>
+                    </div>
+                    
+                </form>
+            </div>
+            <?php
+             }
+            ?>
+            
+            <div class="review_list"  >
+                <?php
+                $sql = "select * from COM_REVIEW where C_num='$bno' order by R_num desc ";
+                $q = mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_array($q)){ 
+                ?>
+                <!--댓글내용 불러오기-->
+                <div id="review_text" style="display: inline-block;" ><a><?php echo nl2br("$row[R_content]"); ?></a></div><br>
+                <!--날짜시간 불러오기-->
+                <div id="review_date"style="display: inline-block;" ><a><?php echo $row['R_date']; ?></a></div><br>
+                <!--별점 불러오기-->
+                <div style="display: inline-block; " >
+                    <div class="rateyo" id="rating" style="display: inline-block;"
+                        data-rateyo-rating="<?php echo $row['rating']; ?>"
+                        data-rateyo-read-only="true" >
+                    </div>
+
+                    <div class="rep_me dap_to" style="display: inline-block;">
+                        <?php echo $review['rating']; ?></div>
+
+
+
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+                    <script>
+
+
+                        $(function () {
+                            $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+                                var rating = data.rating;
+                                $(this).parent().find('.score').text('score :' + $(this).attr('data-rateyo-score'));
+                                $(this).parent().find('.result').text('rating :' + rating);
+                                $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+
+                            });
+                        });
+
+                    </script>
+                    <div id="review_text"style="display: inline-block;"  ><a><?php echo nl2br("$row[rating]"); ?></a></div>
+                    <br>
+                    <br>
+                    <br>
+                    <?php } ?>
+                    <br>
+                </div>
+               
+            
+
+            </div>  
+        </div>
+
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+
+</body>
+
+</html>
