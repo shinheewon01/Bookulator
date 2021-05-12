@@ -1,0 +1,164 @@
+<?php
+    session_start();
+    header('Content-Type: text/html; charset=utf-8;');
+    $mysql_host = 'localhost';
+    $mysql_user = 'deu20191160';
+    $mysql_password = '20191160';
+    $mysql_db = 'deu20191160';
+
+    $conn = mysqli_connect($mysql_host, $mysql_user, $mysql_password);
+    $db = mysqli_select_db($conn, $mysql_db);
+    
+?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/deu20191160/team/maintest.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+    <!--배너를 위한-->
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+            
+            
+            
+        /* banner */
+        .contents {width: 1000px; height: 400px; background-color: #11b341; margin: 0 auto;}
+
+        .banner {position: relative; width: 1000px; height: 400px;   margin:0 auto; padding:0; overflow: hidden;}
+        .banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 1000px; height: 400px; margin:0; padding:0;}
+    
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* 상단 이동 스크롤 버튼 */
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.arrow_upward').fadeIn();
+                } else {
+                    $('.arrow_upward').fadeOut();
+                }
+            });
+            $('.arrow_upward').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 400);
+                return false;
+            });
+        });
+    </script>
+    
+    <title id="header">WD</title>
+</head>
+
+<body>
+    <header style="text-align: center; width: 60%; margin:0em 18em; ">
+        <div  style="display: inline-block; text-align: center;">
+        <a href="http://1.253.254.107/deu20191160/team/main.html"><img src="http://1.253.254.107/deu20191160/team/image/bookulator.png" width= "180" height="180" ></a>
+        <a href="http://1.253.254.107/deu20191160/team/main.html"><img src="http://1.253.254.107/deu20191160/team/image/logo.png" width= "600" height="180"></a>
+        </div>
+        
+        <div id="search" style="height: 40px;width: 100%; border:14px solid #11b341; background: #ffffff;  display: inline-block; text-align: center;  " >
+            
+            <input type ="text" placeholder="검색어 검색" style="font-size: 16px; width: 325px; padding: 10px; outline: none; float: left; ">
+            <button style="width: 80px; height: 42px; ; background: #11b341; outline: none; float: right; margin:0px -1px; color: #ffffff">검색</button>
+        </div>
+    </header>
+    
+
+    <nav id="topMenu" >
+        <ul>
+            <li><a class="menuLink" href="/deu20191160/team/main.html">홈</a></li>              
+            <li><a class="menuLink" href="/deu20191160/team/IPE/IPE.html">정보처리기사</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/MOS/MOS.html">MOS</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/COM/COM.html">컴퓨터활용능력</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/WD/WD.html">웹디자인</a></li>
+            <li><a class="menuLink" href="/deu20191160/team/ERP/ERP.html">ERP</a></li>
+        </ul>
+        <br>
+</nav>
+    <div class="main">
+        <div>
+            <img src="http://1.253.254.107/deu20191160/team/image/WD.png" width="200"height="100" style="padding: 0em 2em;">
+        </div>
+        
+        <div class="adj_content">
+            
+            
+            <div class="adj_board" style="border: 10px solid #11b341;">
+                <table class="adjlist">
+                    <!-- 페이징 -->
+                    <tbody>
+                        <?php     
+                        $sql = "select * from WD";
+                        $q = mysqli_query($conn,$sql);
+                        echo "<tr>";
+                            
+                        while($row = mysqli_fetch_array($q)){ 
+                        ?>
+                        <!-- 보조제 목록 가져오기 -->
+                        <tr>
+                            <td id="photo" >
+                                <?php echo "<img src=" . $row['W_photo'] . " > "; ?></img>
+                            </td>
+                            <td id="name">
+                                <?php echo $row['W_name'];  ?><br>
+                            </td>
+                            <td id="author">
+                                <?php echo $row['W_author'];  ?><br>
+                            </td>
+                            <td id="pub">
+                                <?php  echo $row['W_pub']; ?><br>
+                            </td>
+        
+                            <td id="brand"">
+                                <?php echo "<a href=" . $row['W_store']. ">";
+                                    echo 이동하기;
+                                    echo "</a>";
+                                ?><br>
+                            </td>
+                            <td id="review">
+                                <?php
+                            echo "<a href='/deu20191160/team/WD/WD_review.html?W_num=".$row["W_num"]."'>";
+                            echo 리뷰남기기;
+                            echo "</a>";
+                    ?><br>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                
+                
+				
+
+			</div>
+            
+        </div>
+
+        
+    
+    
+    
+        
+        
+    </div>
+    <footer class="footers">
+        <p>BOOKULATOR</p>
+    </footer>
+
+    <a class="arrow_upward" style="background-color: #11b341;"><i class="material-icons">arrow_upward</i></a>
+
+
+
+
+
+</body>
+
+</html>
